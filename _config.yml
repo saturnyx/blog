@@ -22,7 +22,7 @@ title: Saturnyx's Blog
 author: Harshal
 email: saturnyx@disroot.org
 baseurl: ""
-url: "https://saturnyx.dino.icu/" # the base hostname & protocol for your site, e.g. http://example.com
+url: "https://harshal.is-cool.dev/blog/" # the base hostname & protocol for your site, e.g. http://example.com
 github_username: saturnyx
 
 # Build settings
