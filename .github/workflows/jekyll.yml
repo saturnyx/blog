@@ -36,15 +36,16 @@ jobs:
       - name: Setup rv
         run: |
           curl https://rv.dev/install.sh | bash
+          $HOME/.rv/bin/rv --version
           echo "$HOME/.rv/bin" >> $GITHUB_PATH
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
       - name: Install gems
-        run: rv ci
+        run: $HOME/.rv/bin/rv ci
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
-        run: rv run jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+        run: $HOME/.rv/bin/rv run jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
       - name: Upload artifact
