@@ -33,8 +33,10 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Setup Ruby with rv
-        uses: jdx/setup-rv@main
+      - name: Setup rv
+        run: |
+          curl https://rv.dev/install.sh | bash
+          echo "$HOME/.rv/bin" >> $GITHUB_PATH
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
