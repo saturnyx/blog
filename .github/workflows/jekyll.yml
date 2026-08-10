@@ -33,19 +33,20 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Setup rv
+      - name: Setup rv and install gems
         run: |
-          curl https://rv.dev/install.sh | bash
-          $HOME/.rv/bin/rv --version
-          echo "$HOME/.rv/bin" >> $GITHUB_PATH
+          mkdir -p $HOME/.rv/bin
+          curl -fsSL https://github.com/jdx/rv/releases/download/v0.6.0/rv-x86_64-unknown-linux-gnu.tar.gz | tar -xz -C $HOME/.rv/bin
+          export PATH="$HOME/.rv/bin:$PATH"
+          $HOME/.rv/bin/rv ci
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
-      - name: Install gems
-        run: $HOME/.rv/bin/rv ci
       - name: Build with Jekyll
         # Outputs to the './_site' directory by default
-        run: $HOME/.rv/bin/rv run jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+        run: |
+          export PATH="$HOME/.rv/bin:$PATH"
+          $HOME/.rv/bin/rv run jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
         env:
           JEKYLL_ENV: production
       - name: Upload artifact
