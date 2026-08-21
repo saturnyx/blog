@@ -12,10 +12,14 @@ body {
     line-height: 1.6;
     margin: 0;
     background-color: $background-color;
+    display: flex;
+    flex-direction: column;
 }
 
 main {
     padding: 0 27vw;
+    min-height: 100vh;
+    flex: 1;
 }
 
 @media (max-width: 600px) {
@@ -70,7 +74,8 @@ h4 {
 p {
     text-align: justify;
     font-family: $text;
-    font-size: 1.1rem;
+    font-weight: 400;
+    font-size: 1.2rem;
     margin: 0.5rem 0;
 }
 

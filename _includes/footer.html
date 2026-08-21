@@ -1,25 +1,52 @@
 <div class="footer">
-    <div>
-        <h2>CONTACTING ME</h2>
+    <div style="display: flex; flex-direction: column">
+        <h2>Contacting Me</h2>
         <p>
             I have no clue why you are trying to contact me, but I hope it is
-            reasonable.
+            reasonable. I am open to any ideas for new projects, questions and
+            pull requests. Feel free to email me about anything you want to
+            discuss, or just to say hi! I will try to reply as soon as possible.
         </p>
-
+        <div style="flex-grow: 1"></div>
         <div class="footer-icon-container">
             <a href="https://github.com/saturnyx" target="_blank">
-                <i class="devicon-github-original footer-icon"></i>
+                <img
+                    src="{{ '/assets/img/icons/github.svg' | relative_url }}"
+                    alt="Github"
+                    class="footer-icon"
+                />
             </a>
             <a
                 href="https://discordapp.com/users/1175995074119745598"
                 target="_blank"
             >
-                <i class="fa-brands fa-discord footer-icon"></i>
+                <img
+                    src="{{ '/assets/img/icons/discord.svg' | relative_url }}"
+                    alt="Discord"
+                    class="footer-icon"
+                />
             </a>
             <a href="mailto:saturnyx@disroot.org" target="_blank">
-                <i class="fa-solid fa-envelope footer-icon"></i>
+                <img
+                    src="{{ '/assets/img/icons/mail.svg' | relative_url }}"
+                    alt="Mail"
+                    class="footer-icon"
+                />
             </a>
-
+            <a href="https://gitlab.com/saturnyx" target="_blank">
+                <img
+                    src="{{ '/assets/img/icons/gitlab.svg' | relative_url }}"
+                    alt="Gitlab"
+                    class="footer-icon"
+                />
+            </a>
+            <a href="https://lobste.rs/~saturnyx" target="_blank">
+                <img
+                    src="{{ '/assets/img/icons/lobsters.svg' | relative_url }}"
+                    alt="Lobste.rs"
+                    class="footer-icon"
+                />
+            </a>
             <p
                 class="copyright"
                 style="
@@ -33,26 +60,21 @@
                 © Harshal 2026
             </p>
         </div>
-        <p
-            style="color: var(--icon-color)"
-            href="https://www.websitecarbon.com/website/saturnyx-dino-icu/"
-        >
-            <a
-                href="https://www.websitecarbon.com/website/saturnyx-dino-icu/"
-                style="color: var(--icon-color)"
-            >
-                This webpage cleaner than 76% of all web pages globally. Only
-                0.13 g of CO2 is produced every time someone visits. Click to
-                find out more...</a
-            >
-        </p>
     </div>
     <div>
         <div class="footer-form-container">
-            <form action="https://formspree.io/f/xeokdwva" method="POST">
-                <input type="email" name="email" placeholder="EMAIL or NAME" />
+            <form
+                action="https://formsubmit.co/saturnyx@disroot.org"
+                method="POST"
+            >
+                <input
+                    type="hidden"
+                    name="_next"
+                    value="https://saturnyx.github.io/?submitted=1"
+                />
+                <input type="email" name="email" placeholder="EMAIL" />
                 <textarea name="message" placeholder="MESSAGE"></textarea>
-                <button type="submit">Send</button>
+                <button type="submit" id="contact-submit-btn">Send</button>
             </form>
         </div>
     </div>
