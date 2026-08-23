@@ -41,7 +41,7 @@
 
 .nav-link {
     text-decoration: none;
-    color: $link-visited;
+    color: $link-hover;
     padding: 1rem;
     font-weight: 500;
     font-family: $text;
@@ -58,7 +58,7 @@
     }
 
     &:visited {
-        color: $link-visited;
+        color: $link-hover;
     }
 
     &.dropdown-toggle {
@@ -103,7 +103,7 @@
 .dropdown-item {
     display: block;
     padding: 0.5rem 1rem;
-    color: $link-visited;
+    color: $link-hover;
     text-decoration: none;
     font-family: $text;
     transition: all 0.3s ease;
